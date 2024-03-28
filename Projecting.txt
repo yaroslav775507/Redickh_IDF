@@ -1,0 +1,78 @@
+### 1. Проектирование базы данных:
+
+#### Сущности:
+
+1. Transaction:
+   - id (Primary Key)
+   - accountFrom (Integer)
+   - accountTo (Integer)
+   - currencyShortName (String)
+   - sum (Double)
+   - expenseCategory (String)
+   - dateTime (Timestamp)
+
+2. MonthlyLimit:
+   - id (Primary Key)
+   - limitSum (Double)
+   - limitDateTime (Timestamp)
+   - limitCurrencyShortName (String)
+   - category (String)
+
+3. ExchangeRate:
+   - id (Primary Key)
+   - currencyPair (String)
+   - rate (Double)
+   - date (Date)
+
+### 2. Выбор технологий:
+
+- Язык программирования: Java
+- Фреймворк: Spring Boot (для создания микросервиса)
+- ORM: Hibernate
+- База данных: PostgreSQL
+- Инструменты для миграций БД: Liquibase
+- Тестирование: JUnit и Mockito
+
+### 3. Написание кода:
+
+#### Модели (Entity Classes):
+
+- Transaction.java
+- MonthlyLimit.java
+- ExchangeRate.java
+
+#### Репозитории (Repositories) с использованием Hibernate:
+
+- TransactionRepository.java
+- MonthlyLimitRepository.java
+- ExchangeRateRepository.java
+
+#### Сервисы (Services):
+
+- TransactionService.java
+- MonthlyLimitService.java
+- ExchangeRateService.java
+
+#### Контроллеры (Controllers):
+
+- TransactionController.java
+- ClientController.java
+
+#### Конфигурация (Configuration):
+
+- DatabaseConfig.java (конфигурация Hibernate)
+
+### 4. Написание тестов:
+
+- TransactionServiceTest.java
+- MonthlyLimitServiceTest.java
+- ExchangeRateServiceTest.java
+- ControllerTest.java (для тестирования контроллеров)
+
+### 5. Создание документации:
+
+- README.md (с описанием шагов запуска сервиса и API)
+
+### 6. Публикация в репозитории:
+
+- GitHub/GitLab
