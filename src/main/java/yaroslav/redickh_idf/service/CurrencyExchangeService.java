@@ -35,9 +35,8 @@ public class CurrencyExchangeService {
         return restTemplate.getForObject(url, String.class);
     }
 
-    //@Scheduled(cron = "0 0 0 * * ?")
-    //Для проверки установил 5000
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(cron = "0 0 0 * * ?")
+    //@Scheduled(fixedRate = 5000)
     public void updateExchangeRate() {
         String pairs = "USDRUB";
         String exchangeRateResponse = getExchangeRate(pairs);
@@ -52,6 +51,7 @@ public class CurrencyExchangeService {
             e.printStackTrace();
         }
     }
+
 
     public Currency saveCurrency(String pair) {
         String exchangeRateResponse = getExchangeRate(pair);
